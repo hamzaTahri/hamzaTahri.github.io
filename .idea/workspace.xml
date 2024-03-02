@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f83b7127-dc97-4af4-8223-5012f2fb7d7d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fr/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fr/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +35,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/DELL/WebstormProjects/hamzaTahri.github.io",
+    "last_opened_file_path": "C:/Users/DELL/WebstormProjects/hamzaTahri.github.io/Fr",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,6 +46,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\Fr" />
       <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io" />
       <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\assets\img\fastReactPizza" />
       <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\assets\img" />
@@ -60,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663509743450</updated>
       <workItem from="1663509746156" duration="50000" />
-      <workItem from="1709379972470" duration="635000" />
+      <workItem from="1709379972470" duration="1152000" />
     </task>
     <servers />
   </component>
