@@ -7,10 +7,7 @@
     <list default="true" id="f83b7127-dc97-4af4-8223-5012f2fb7d7d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fr/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fr/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fr/reactPizza-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fr/reactPizza-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fr/worldWise-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Fr/worldWise-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactPizza-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactPizza-details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,22 +36,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/DELL/WebstormProjects/hamzaTahri.github.io/Fr",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/DELL/WebstormProjects/hamzaTahri.github.io",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\Fr" />
       <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io" />
-      <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\assets\img\reactQuiz" />
+      <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\assets\img\ebankingWeb" />
+      <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\assets\img\ebankingFlutter" />
       <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\assets\img" />
-      <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\assets\img\worldWise" />
+      <recent name="C:\Users\DELL\WebstormProjects\hamzaTahri.github.io\Fr" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -70,7 +69,9 @@
       <workItem from="1709382015116" duration="35000" />
       <workItem from="1709382881057" duration="783000" />
       <workItem from="1709384401536" duration="11000" />
-      <workItem from="1709384791984" duration="494000" />
+      <workItem from="1709384791984" duration="698000" />
+      <workItem from="1709542347815" duration="1594000" />
+      <workItem from="1710074701061" duration="2863000" />
     </task>
     <servers />
   </component>
