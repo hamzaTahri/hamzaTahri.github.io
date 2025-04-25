@@ -949,14 +949,13 @@ section {
   font-size: 24px;
   font-weight: 700;
   color: var(--primary-color);
-  margin-bottom: 25px;
-  padding-bottom: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 2px solid var(--secondary-color);
 }
 
 .resume-item {
-  padding: 25px;
-  margin-bottom: 20px;
+  padding: 20px;
   background: rgba(100, 255, 218, 0.05);
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -973,7 +972,6 @@ section {
 
 .resume-header {
   margin-bottom: 15px;
-  padding: 0 10px;
 }
 
 .resume-header h4 {
@@ -1008,32 +1006,49 @@ section {
   color: var(--light-gray);
   margin-bottom: 15px;
   font-style: italic;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 10px;
 }
 
 .resume-subtitle i {
   color: var(--secondary-color);
-  font-size: 18px;
+  margin-right: 8px;
 }
 
 .resume-description {
   font-size: 15px;
   line-height: 1.8;
   color: var(--light-gray);
-  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.resume-contact {
+  margin-top: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-item i {
+  font-size: 20px;
+  color: var(--secondary-color);
+  margin-right: 10px;
+}
+
+.contact-item span {
+  font-size: 14px;
+  color: var(--light-gray);
 }
 
 .resume-list {
   list-style: none;
-  padding: 0 10px;
+  padding: 0;
   margin: 15px 0;
 }
 
 .resume-list li {
-  padding: 10px 0;
+  padding: 8px 0;
   position: relative;
   padding-left: 25px;
   color: var(--light-gray);
@@ -1049,18 +1064,17 @@ section {
 }
 
 .tech-stack {
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 0 10px;
+  gap: 8px;
 }
 
 .tech-tag {
   display: inline-block;
   background: var(--secondary-color);
   color: var(--primary-color);
-  padding: 8px 15px;
+  padding: 6px 15px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
@@ -1081,23 +1095,11 @@ section {
   }
   
   .resume-item {
-    padding: 20px;
+    padding: 15px;
   }
   
   .resume-header h4 {
     font-size: 18px;
-  }
-  
-  .resume-list li {
-    padding: 8px 0;
-  }
-  
-  .resume-header,
-  .resume-subtitle,
-  .resume-description,
-  .resume-list,
-  .tech-stack {
-    padding: 0 5px;
   }
 }
 
@@ -2001,5 +2003,401 @@ section {
   
   .resume-header h4 {
     font-size: 18px;
+  }
+}
+
+/* Horizontal Scrollable Sections */
+.scrollable-section {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+  margin: -20px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color) var(--light-gray);
+}
+
+.scrollable-section::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollable-section::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 3px;
+}
+
+.scrollable-section::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 3px;
+}
+
+.scrollable-section .row {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0 20px;
+  width: max-content;
+}
+
+.scrollable-section .col-lg-6 {
+  flex: 0 0 auto;
+  width: 400px;
+  margin-right: 30px;
+  white-space: normal;
+}
+
+.scrollable-section .col-lg-6:last-child {
+  margin-right: 0;
+}
+
+.scrollable-section .resume-card {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.scrollable-section .resume-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollable-section .resume-description {
+  flex: 1;
+}
+
+.scrollable-section .resume-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.scrollable-section .resume-header {
+  margin-bottom: 15px;
+}
+
+.scrollable-section .resume-header h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 10px 0;
+}
+
+.scrollable-section .resume-subtitle {
+  font-size: 15px;
+  color: var(--light-gray);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .scrollable-section .col-lg-6 {
+    width: 300px;
+  }
+  
+  .scrollable-section .resume-item {
+    padding: 15px;
+  }
+  
+  .scrollable-section .resume-title {
+    font-size: 18px;
+  }
+  
+  .scrollable-section .resume-header h4 {
+    font-size: 16px;
+  }
+}
+
+/* Professional Experience Scrollable */
+.experience-scrollable {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+  margin: -20px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color) var(--light-gray);
+}
+
+.experience-scrollable::-webkit-scrollbar {
+  height: 6px;
+}
+
+.experience-scrollable::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 3px;
+}
+
+.experience-scrollable::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 3px;
+}
+
+.experience-scrollable .resume-timeline {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  padding: 0 20px;
+  width: max-content;
+}
+
+.experience-scrollable .resume-item {
+  flex: 0 0 auto;
+  width: 500px;
+  margin-right: 30px;
+  white-space: normal;
+}
+
+.experience-scrollable .resume-item:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .scrollable-section .col-lg-6,
+  .experience-scrollable .resume-item {
+    width: 300px;
+  }
+}
+
+/* Education Section */
+.education-section {
+  margin-top: 40px;
+}
+
+.education-section .section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Education Cards */
+.scrollable-section .resume-card {
+  height: 100%;
+  margin-bottom: 0;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.scrollable-section .resume-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--secondary-color);
+}
+
+.scrollable-section .resume-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: transparent;
+}
+
+.scrollable-section .resume-header {
+  margin-bottom: 20px;
+}
+
+.scrollable-section .resume-header h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.scrollable-section .resume-header .badge {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--secondary-color);
+  display: inline-block;
+}
+
+.scrollable-section .resume-subtitle {
+  font-size: 15px;
+  color: var(--light-gray);
+  margin-bottom: 15px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scrollable-section .resume-subtitle i {
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+.scrollable-section .resume-description {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--light-gray);
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .education-section .section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .scrollable-section .resume-item {
+    padding: 20px;
+  }
+  
+  .scrollable-section .resume-header h4 {
+    font-size: 16px;
+  }
+  
+  .scrollable-section .resume-subtitle {
+    font-size: 14px;
+  }
+  
+  .scrollable-section .resume-description {
+    font-size: 13px;
+  }
+}
+
+/* Section Titles */
+.education-section,
+.experience-section {
+  margin-top: 40px;
+}
+
+.education-section .section-title,
+.experience-section .section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .education-section .section-title,
+  .experience-section .section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Scroll Indicator */
+.scroll-indicator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
+  padding: 10px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.scroll-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--light-gray);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid var(--light-gray);
+}
+
+.scroll-dot.active {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+.scroll-dot:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* Smooth Scrolling */
+.scrollable-section,
+.experience-scrollable {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 20px;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+  margin: -20px 0;
+}
+
+.scrollable-section .col-lg-6,
+.experience-scrollable .resume-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Hide default scrollbar but keep functionality */
+.scrollable-section::-webkit-scrollbar,
+.experience-scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable-section,
+.experience-scrollable {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Add fade effect to edges */
+.scrollable-section::after,
+.experience-scrollable::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  background: linear-gradient(to right, transparent, var(--background-color));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scrollable-section::before,
+.experience-scrollable::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  background: linear-gradient(to left, transparent, var(--background-color));
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .scroll-dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .scroll-indicator-container {
+    margin-top: 20px;
+    gap: 8px;
   }
 }
