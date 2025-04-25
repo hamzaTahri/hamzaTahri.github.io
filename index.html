@@ -101,6 +101,92 @@
         #experienceScroll .resume-item.active {
             transform: scale(1.05);
         }
+
+        .tooltip-disabled {
+            position: relative;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        .tooltip-disabled:hover::after {
+            content: attr(data-tooltip);
+            position: fixed;
+            top: auto;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 16px;
+            background-color: rgba(51, 51, 51, 0.95);
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: normal;
+            z-index: 9999;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            width: 300px;
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        .tooltip-disabled:hover::before {
+            content: '';
+            position: fixed;
+            top: auto;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent rgba(51, 51, 51, 0.95) transparent;
+            z-index: 9999;
+        }
+
+        /* Hide default scrollbar but keep functionality */
+        .scrollable-section::-webkit-scrollbar,
+        .experience-scrollable::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollable-section,
+        .experience-scrollable {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Remove fade effects */
+        .scrollable-section::after,
+        .scrollable-section::before,
+        .experience-scrollable::after,
+        .experience-scrollable::before {
+            display: none;
+        }
+
+        /* Resume List Styling */
+        .resume-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .resume-list li {
+            position: relative;
+            padding: 8px 0 8px 25px;
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        .resume-list li:before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+
+        .resume-list li:last-child {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 
@@ -156,7 +242,7 @@
                     <a href="#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a>
                 </li>
                 <li>
-                    <a href="./Fr/index.html"><i class="bx bx-world"></i> <span>Lire En Français</span></a>
+                    <a href="#" onclick="return false;" class="tooltip-disabled" data-tooltip="This feature has been deprecated. Please use your browser's translation feature instead."><i class="bx bx-world"></i> <span>Lire En Français</span></a>
                 </li>
             </ul>
         </nav>
@@ -281,15 +367,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="about-description">
-                            <p>
-                                With more than four internships within five years of study, I
-                                had the chance to collect many practical experiences and soft
-                                skills and pushed me to learn different technologies and tools
-                                of each company.
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -318,12 +395,12 @@
                                 <span class="badge">Software Engineer</span>
                             </div>
                             <p class="resume-description">
-                                <em>Innovative and deadline-driven Software Engineer with 8+ years of study and experience building and testing digital products from initial concept to final deliverable.</em>
+                                <em>Innovative and deadline-driven Software Engineer with 3+ years of experience building and testing digital products from initial concept to final deliverable.</em>
                             </p>
                             <div class="resume-contact">
                                 <div class="contact-item">
                                     <i class="icofont-location-pin"></i>
-                                    <span>Agadir, Morocco</span>
+                                    <span>Casablanca, Morocco</span>
                                 </div>
                                 <div class="contact-item">
                                     <i class="icofont-phone"></i>
@@ -339,69 +416,6 @@
                 </div>
             </div>
 
-            <!-- Education Section (Scrollable) -->
-            <div class="education-section">
-                <h3 class="section-title">Education</h3>
-                <div class="scrollable-section" id="educationScroll">
-                    <div class="row">
-                        <!-- Education Card 1 -->
-                        <div class="col-lg-6" data-aos="fade-up">
-                            <div class="resume-card">
-                                <div class="resume-item">
-                                    <div class="resume-header">
-                                        <h4>Engineering &amp; Computer Science</h4>
-                                        <span class="badge">2020 - 2022</span>
-                                    </div>
-                                    <p class="resume-subtitle">ENSA Safi, University Cadi Ayad, Morocco</p>
-                                    <p class="resume-description">
-                                        School Of Applied sciences belongs to University Cadi Ayyad
-                                        where I've got opportunities to learn engineering skills in
-                                        Computer Sciences and problem Solving.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Education Card 2 -->
-                        <div class="col-lg-6" data-aos="fade-up">
-                            <div class="resume-card">
-                                <div class="resume-item">
-                                    <div class="resume-header">
-                                        <h4>Licence Web Technologies &amp; Web Development</h4>
-                                        <span class="badge">2019 - 2020</span>
-                                    </div>
-                                    <p class="resume-subtitle">Faculty Of Science Semlalia, Marrakech, Morocco</p>
-                                    <p class="resume-description">
-                                        Faculty Of Science at marrakech, One of the oldest schools of
-                                        Cadi Ayyad. Here I learned to work under limited time and
-                                        manage teams.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Education Card 3 -->
-                        <div class="col-lg-6" data-aos="fade-up">
-                            <div class="resume-card">
-                                <div class="resume-item">
-                                    <div class="resume-header">
-                                        <h4>University degree Of Technology &amp; Computer Science</h4>
-                                        <span class="badge">2017 - 2019</span>
-                                    </div>
-                                    <p class="resume-subtitle">Superior School Of Technology, Agadir, Morocco</p>
-                                    <p class="resume-description">
-                                        School Of University IBN-ZOHR, This was my first journey with
-                                        computer science as a field of study not just a source of fun.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-indicator-container" id="educationDots">
-                    <!-- Dots will be added by JavaScript -->
-                </div>
-            </div>
 
             <!-- Professional Experience Section -->
             <div class="experience-section">
@@ -411,7 +425,7 @@
                         <div class="resume-item">
                             <div class="resume-header">
                                 <h4>Software Engineer</h4>
-                                <span class="badge">November 2025 - Present</span>
+                                <span class="badge">November 2024 - Present</span>
                             </div>
                             <div class="resume-content">
                                 <div class="resume-subtitle">
@@ -441,7 +455,7 @@
                         <div class="resume-item">
                             <div class="resume-header">
                                 <h4>Software Engineer</h4>
-                                <span class="badge">April 2024 - November 2025</span>
+                                <span class="badge">April 2024 - November 2024</span>
                             </div>
                             <div class="resume-content">
                                 <div class="resume-subtitle">
@@ -599,6 +613,69 @@
                     </div>
                 </div>
                 <div class="scroll-indicator-container" id="experienceDots">
+                    <!-- Dots will be added by JavaScript -->
+                </div>
+            </div>
+            <!-- Education Section (Scrollable) -->
+            <div class="education-section">
+                <h3 class="section-title">Education</h3>
+                <div class="scrollable-section" id="educationScroll">
+                    <div class="row">
+                        <!-- Education Card 1 -->
+                        <div class="col-lg-6" data-aos="fade-up">
+                            <div class="resume-card">
+                                <div class="resume-item">
+                                    <div class="resume-header">
+                                        <h4>Engineering &amp; Computer Science</h4>
+                                        <span class="badge">2020 - 2022</span>
+                                    </div>
+                                    <p class="resume-subtitle">ENSA Safi, University Cadi Ayad, Morocco</p>
+                                    <p class="resume-description">
+                                        School Of Applied sciences belongs to University Cadi Ayyad
+                                        where I've got opportunities to learn engineering skills in
+                                        Computer Sciences and problem Solving.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Card 2 -->
+                        <div class="col-lg-6" data-aos="fade-up">
+                            <div class="resume-card">
+                                <div class="resume-item">
+                                    <div class="resume-header">
+                                        <h4>Licence Web Technologies &amp; Web Development</h4>
+                                        <span class="badge">2019 - 2020</span>
+                                    </div>
+                                    <p class="resume-subtitle">Faculty Of Science Semlalia, Marrakech, Morocco</p>
+                                    <p class="resume-description">
+                                        Faculty Of Science at marrakech, One of the oldest schools of
+                                        Cadi Ayyad. Here I learned to work under limited time and
+                                        manage teams.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Card 3 -->
+                        <div class="col-lg-6" data-aos="fade-up">
+                            <div class="resume-card">
+                                <div class="resume-item">
+                                    <div class="resume-header">
+                                        <h4>University degree Of Technology &amp; Computer Science</h4>
+                                        <span class="badge">2017 - 2019</span>
+                                    </div>
+                                    <p class="resume-subtitle">Superior School Of Technology, Agadir, Morocco</p>
+                                    <p class="resume-description">
+                                        School Of University IBN-ZOHR, This was my first journey with
+                                        computer science as a field of study not just a source of fun.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator-container" id="educationDots">
                     <!-- Dots will be added by JavaScript -->
                 </div>
             </div>
