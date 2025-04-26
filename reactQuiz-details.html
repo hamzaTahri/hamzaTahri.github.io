@@ -29,12 +29,227 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: iPortfolio - v1.5.1
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <style>
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('assets/img/reactQuiz/Screenshot%202024-03-02%20140108.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .project-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .meta-item i {
+            font-size: 1.5rem;
+            color: #149ddd;
+        }
+
+        .meta-item span {
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .tech-stack-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+        }
+
+        .tech-stack-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-item i {
+            font-size: 3rem;
+            color: #149ddd;
+            margin-bottom: 15px;
+        }
+
+        .tech-item span {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #149ddd;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .project-link:hover {
+            background: #0d6efd;
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .gallery-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .gallery-header p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 16/9;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -63,11 +278,11 @@
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
-                <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
-                <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-                <li class="active"><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
-                <li><a href="#services"><i class="bx bx-server"></i> Services</a></li>
-                <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
+                <li><a href="index.html#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+                <li><a href="index.html#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+                <li class="active"><a href="index.html#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
+                <li><a href="index.html#services"><i class="bx bx-server"></i> Services</a></li>
+                <li><a href="index.html#contact"><i class="bx bx-envelope"></i> Contact</a></li>
 
             </ul>
         </nav><!-- .nav-menu -->
@@ -78,64 +293,95 @@
 
 <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs" id="breadcrumbs">
-        <div class="container">
-
-            <div class="d-flex justify-content-between align-items-center">
-                <h2>ReactQuiz Details</h2>
-                <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li>ReactQuiz Details</li>
-                </ol>
-            </div>
-
+    <!-- ======= Hero Section ======= -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>ReactQuiz Project</h1>
+            <p>A timed assessment tool for React students</p>
         </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section class="portfolio-details" id="portfolio-details">
+    <!-- ======= Project Section ======= -->
+    <section class="project-section">
         <div class="container">
-
-            <div class="portfolio-details-container">
-
-                <div class="owl-carousel portfolio-details-carousel">
-                    <img alt="" class="img-fluid" src="assets/img/reactQuiz/Screenshot%202024-03-02%20140108.png">
-                    <img alt="" class="img-fluid" src="assets/img/reactQuiz/Screenshot%202024-03-02%20140139.png">
-                    <img alt="" class="img-fluid" src="assets/img/reactQuiz/Screenshot%202024-03-02%20140158.png">
-                    <img alt="" class="img-fluid" src="assets/img/reactQuiz/Screenshot%202024-03-02%20140238.png">
-                    <img alt="" class="img-fluid" src="assets/img/reactQuiz/Screenshot%202024-03-02%20140508.png">
-                </div>
-
-                <div class="portfolio-info">
-                    <h3>Project information</h3>
-                    <ul>
-                        <li><strong>Category</strong>: Web Application</li>
-                        <li><strong>Client</strong>: Students</li>
-                        <li><strong>Project date</strong>: 01 February 2024</li>
-                        <li><strong>Technologies</strong>: React, Javascript
-                        </li>
-                        <li><strong>Project URL</strong>: <a
-                                href="https://github.com/hamzaTahri/react-quiz">github.com</a></li>
-                    </ul>
-                </div>
-
+            <div class="section-header">
+                <h2>Project Overview</h2>
+                <p>React Quiz is a timed assessment tailored for React students, featuring approximately 15 questions
+                    covering fundamental and advanced React concepts.</p>
             </div>
 
-            <div class="portfolio-description">
-                <h2>ReactQuiz Project - React</h2>
-                <p>React Quiz: Timed Assessment for React Students
-
-                    Description:
-                    React Quiz is a timed assessment tailored for React students, featuring approximately 15 questions
-                    covering fundamental and advanced React concepts. With an intuitive interface, real-time feedback,
-                    and scalable difficulty levels, students can gauge their proficiency, track progress, and identify
-                    areas for improvement. Mobile compatibility ensures convenient access, making React Quiz an
-                    invaluable tool for self-assessment and classroom instruction alike.</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="bx bx-calendar"></i>
+                    <span>February 2024</span>
+                </div>
+                <div class="meta-item">
+                    <i class="bx bx-user"></i>
+                    <span>Students</span>
+                </div>
+                <div class="meta-item">
+                    <i class="bx bx-category"></i>
+                    <span>Web Application</span>
+                </div>
             </div>
 
+            <div class="tech-stack-section">
+                <h3>Technology Stack</h3>
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <i class="bx bxl-react"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="bx bxl-javascript"></i>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="https://github.com/hamzaTahri/react-quiz" class="project-link" target="_blank">
+                        <i class="bx bxl-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
         </div>
-    </section><!-- End Portfolio Details Section -->
+    </section>
+
+    <!-- ======= Gallery Section ======= -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <h2>Project Gallery</h2>
+                <p>Explore the key features and interface of the ReactQuiz application</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="assets/img/reactQuiz/Screenshot%202024-03-02%20140108.png" class="venobox" data-gall="gallery">
+                        <img src="assets/img/reactQuiz/Screenshot%202024-03-02%20140108.png" alt="">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="assets/img/reactQuiz/Screenshot%202024-03-02%20140139.png" class="venobox" data-gall="gallery">
+                        <img src="assets/img/reactQuiz/Screenshot%202024-03-02%20140139.png" alt="">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="assets/img/reactQuiz/Screenshot%202024-03-02%20140158.png" class="venobox" data-gall="gallery">
+                        <img src="assets/img/reactQuiz/Screenshot%202024-03-02%20140158.png" alt="">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="assets/img/reactQuiz/Screenshot%202024-03-02%20140238.png" class="venobox" data-gall="gallery">
+                        <img src="assets/img/reactQuiz/Screenshot%202024-03-02%20140238.png" alt="">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="assets/img/reactQuiz/Screenshot%202024-03-02%20140508.png" class="venobox" data-gall="gallery">
+                        <img src="assets/img/reactQuiz/Screenshot%202024-03-02%20140508.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </main><!-- End #main -->
 

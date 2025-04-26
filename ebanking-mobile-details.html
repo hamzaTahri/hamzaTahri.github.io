@@ -29,113 +29,616 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: iPortfolio - v1.5.1
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <style>
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('assets/img/ebankingMobile/combine_images.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .project-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .meta-item i {
+            font-size: 1.5rem;
+            color: #149ddd;
+        }
+
+        .meta-item span {
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .tech-stack-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+        }
+
+        .tech-stack-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-item i {
+            font-size: 3rem;
+            color: #149ddd;
+            margin-bottom: 15px;
+        }
+
+        .tech-item span {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #149ddd;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .project-link:hover {
+            background: #0d6efd;
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .gallery-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .gallery-header p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 16/9;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            z-index: 10000;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 10001;
+        }
+
+        .lightbox-nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10001;
+        }
+
+        .lightbox-nav button:hover {
+            color: #149ddd;
+        }
+    </style>
 </head>
 
 <body>
-
     <!-- ======= Mobile nav toggle button ======= -->
     <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
     <!-- ======= Header ======= -->
     <header id="header">
         <div class="d-flex flex-column">
-
             <div class="profile">
                 <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
                 <h1 class="text-light"><a href="index.html">Hamza TAHRI</a></h1>
                 <div class="social-links mt-3 text-center">
                     <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="https://web.facebook.com/hamza.tahri.ht/" class="facebook"><i
-                            class="bx bxl-facebook"></i></a>
-
+                    <a href="https://web.facebook.com/hamza.tahri.ht/" class="facebook"><i class="bx bxl-facebook"></i></a>
                     <a href="mailto:contactHamza.tahri@gmail.com" class="google-plus"><i class="bx bx-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/hamza-tahri" class="linkedin"><i
-                            class="bx bxl-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/hamza-tahri" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                 </div>
             </div>
 
             <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
-                    <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
-                    <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-                    <li class="active"><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
-                    <li><a href="#services"><i class="bx bx-server"></i> Services</a></li>
-                    <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
-
+                    <li><a href="index.html#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+                    <li><a href="index.html#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+                    <li class="active"><a href="index.html#portfolio"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+                    <li><a href="index.html#services"><i class="bx bx-server"></i> <span>Services</span></a></li>
+                    <li><a href="index.html#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
                 </ul>
-            </nav><!-- .nav-menu -->
+            </nav>
             <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
         </div>
-    </header><!-- End Header -->
+    </header>
 
     <main id="main">
-
-        <!-- ======= Breadcrumbs ======= -->
-        <section id="breadcrumbs" class="breadcrumbs">
-            <div class="container">
-
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>Online Banking Client App</h2>
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li>Online Banking Client App</li>
-                    </ol>
-                </div>
-
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Online Banking Client App</h1>
+                <p>A cross-platform mobile application built with Flutter for seamless banking experience</p>
             </div>
-        </section><!-- End Breadcrumbs -->
+        </section>
 
-        <!-- ======= Portfolio Details Section ======= -->
-        <section id="portfolio-details" class="portfolio-details">
+        <!-- Project Section -->
+        <section class="project-section">
             <div class="container">
-
-                <div class="portfolio-details-container">
-
-                    <div class="owl-carousel portfolio-details-carousel">
-                        <img src="assets/img/ebankingMobile/combine_images.jpg" class="img-fluid" alt="">
-                        <img src="assets/img/ebankingMobile/combine_images_1.jpg" class="img-fluid" alt="">
-                        <img src="assets/img/ebankingMobile/combine_images_2.jpg" class="img-fluid" alt="">
-                        <img src="assets/img/ebankingMobile/combine_images_3.jpg" class="img-fluid" alt="">
-                        <img src="assets/img/ebankingMobile/combine_images_4.jpg" class="img-fluid" alt="">
-                        <img src="assets/img/ebankingMobile/combine_images_5.jpg" class="img-fluid" alt="">
-                        <img src="assets/img/ebankingMobile/combine_images_6.jpg" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="portfolio-info">
-                        <h3>Project information</h3>
-                        <ul>
-                            <li><strong>Category</strong>: Mobile Application</li>
-                            <li><strong>Client</strong>: Ensa Safi</li>
-                            <li><strong>Project date</strong>: 01 January, 2020</li>
-                            <li><strong>Technologies</strong>: Flutter, Firebase</li>
-                            <li><strong>Project URL</strong>: <a href="#">github.com</a></li>
-                        </ul>
-                    </div>
-
+                <div class="section-header">
+                    <h2>Project Overview</h2>
+                    <p>A comprehensive mobile banking solution for Android and iOS platforms</p>
                 </div>
 
-                <div class="portfolio-description">
-                    <h2>Ebanking client Mobile App (Flutter Android/IOS)</h2>
-                    <p>
-                        This Project is built in Flutter/Dart, an open-source UI software development kit created by
-                        Google. It is used to develop cross platform applications for Android, iOS, Linux, macOS,
-                        Windows, Google Fuchsia, and the web from a single codebase. First described in 2015, Flutter
-                        was released in May 2017. </p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="bx bx-building"></i>
+                        <span>Ensa Safi</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="bx bx-calendar"></i>
+                        <span>January 2020</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="bx bx-code-alt"></i>
+                        <span>Mobile App</span>
+                    </div>
                 </div>
 
+                <div class="tech-stack-section">
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="bx bxl-flutter"></i>
+                            <span>Flutter</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="bx bxl-firebase"></i>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="bx bx-mobile-alt"></i>
+                            <span>Mobile UI</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="bx bx-server"></i>
+                            <span>Backend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="#" class="project-link">
+                        View on GitHub <i class="bx bx-right-arrow-alt"></i>
+                    </a>
+                </div>
             </div>
-        </section><!-- End Portfolio Details Section -->
+        </section>
 
-    </main><!-- End #main -->
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-header">
+                    <h2>Project Gallery</h2>
+                    <p>Explore the key features and interface of our Online Banking Client App</p>
+                </div>
 
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/combine_images.jpg">
+                        <img src="assets/img/ebankingMobile/combine_images.jpg" alt="App Interface">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/combine_images_1.jpg">
+                        <img src="assets/img/ebankingMobile/combine_images_1.jpg" alt="Banking Features">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/combine_images_2.jpg">
+                        <img src="assets/img/ebankingMobile/combine_images_2.jpg" alt="Transaction History">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/combine_images_3.jpg">
+                        <img src="assets/img/ebankingMobile/combine_images_3.jpg" alt="Account Management">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/combine_images_4.jpg">
+                        <img src="assets/img/ebankingMobile/combine_images_4.jpg" alt="Payment Interface">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/combine_images_5.jpg">
+                        <img src="assets/img/ebankingMobile/combine_images_5.jpg" alt="Settings">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/combine_images_6.jpg">
+                        <img src="assets/img/ebankingMobile/combine_images_6.jpg" alt="User Profile">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-028.jpg">
+                        <img src="assets/img/ebankingMobile/image-028.jpg" alt="App Screenshot 1">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-029.jpg">
+                        <img src="assets/img/ebankingMobile/image-029.jpg" alt="App Screenshot 2">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-030.jpg">
+                        <img src="assets/img/ebankingMobile/image-030.jpg" alt="App Screenshot 3">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-031.jpg">
+                        <img src="assets/img/ebankingMobile/image-031.jpg" alt="App Screenshot 4">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-032.jpg">
+                        <img src="assets/img/ebankingMobile/image-032.jpg" alt="App Screenshot 5">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-033.jpg">
+                        <img src="assets/img/ebankingMobile/image-033.jpg" alt="App Screenshot 6">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-034.jpg">
+                        <img src="assets/img/ebankingMobile/image-034.jpg" alt="App Screenshot 7">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-035.jpg">
+                        <img src="assets/img/ebankingMobile/image-035.jpg" alt="App Screenshot 8">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-036.jpg">
+                        <img src="assets/img/ebankingMobile/image-036.jpg" alt="App Screenshot 9">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-037.jpg">
+                        <img src="assets/img/ebankingMobile/image-037.jpg" alt="App Screenshot 10">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-038.jpg">
+                        <img src="assets/img/ebankingMobile/image-038.jpg" alt="App Screenshot 11">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-039.jpg">
+                        <img src="assets/img/ebankingMobile/image-039.jpg" alt="App Screenshot 12">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-040.jpg">
+                        <img src="assets/img/ebankingMobile/image-040.jpg" alt="App Screenshot 13">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-041.jpg">
+                        <img src="assets/img/ebankingMobile/image-041.jpg" alt="App Screenshot 14">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-042.jpg">
+                        <img src="assets/img/ebankingMobile/image-042.jpg" alt="App Screenshot 15">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-043.jpg">
+                        <img src="assets/img/ebankingMobile/image-043.jpg" alt="App Screenshot 16">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-044.jpg">
+                        <img src="assets/img/ebankingMobile/image-044.jpg" alt="App Screenshot 17">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-045.jpg">
+                        <img src="assets/img/ebankingMobile/image-045.jpg" alt="App Screenshot 18">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-046.jpg">
+                        <img src="assets/img/ebankingMobile/image-046.jpg" alt="App Screenshot 19">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-047.jpg">
+                        <img src="assets/img/ebankingMobile/image-047.jpg" alt="App Screenshot 20">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-048.jpg">
+                        <img src="assets/img/ebankingMobile/image-048.jpg" alt="App Screenshot 21">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-image="assets/img/ebankingMobile/image-049.jpg">
+                        <img src="assets/img/ebankingMobile/image-049.jpg" alt="App Screenshot 22">
+                        <div class="gallery-item-overlay">
+                            <i class="bx bx-zoom-in"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox">
+            <div class="lightbox-content">
+                <span class="lightbox-close">&times;</span>
+                <img src="" alt="">
+                <div class="lightbox-nav">
+                    <button class="lightbox-prev"><i class="bx bx-chevron-left"></i></button>
+                    <button class="lightbox-next"><i class="bx bx-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
@@ -155,6 +658,72 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <!-- Lightbox Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+            const lightboxNext = lightbox.querySelector('.lightbox-next');
+            let currentImageIndex = 0;
+
+            // Open lightbox
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    updateLightboxImage();
+                    lightbox.classList.add('active');
+                });
+            });
+
+            // Close lightbox
+            lightboxClose.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+
+            // Close lightbox on click outside
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+
+            // Previous image
+            lightboxPrev.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                updateLightboxImage();
+            });
+
+            // Next image
+            lightboxNext.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                updateLightboxImage();
+            });
+
+            // Update lightbox image
+            function updateLightboxImage() {
+                const imageUrl = galleryItems[currentImageIndex].getAttribute('data-image');
+                lightboxImg.src = imageUrl;
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                } else if (e.key === 'ArrowLeft') {
+                    currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                    updateLightboxImage();
+                } else if (e.key === 'ArrowRight') {
+                    currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                    updateLightboxImage();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
