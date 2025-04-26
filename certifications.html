@@ -5,18 +5,16 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <title>TAHRI Hamza</title>
-    <meta content="" name="description"/>
-    <meta content="" name="keywords"/>
+    <title>Certifications - Hamza TAHRI</title>
+    <meta content="Professional certifications and achievements of Hamza TAHRI" name="description"/>
+    <meta content="certifications, AWS, Coursera, Huawei, Cisco, cloud computing, machine learning" name="keywords"/>
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon"/>
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
 
     <!-- Google Fonts -->
-    <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-            rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -29,324 +27,519 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet"/>
 
-
-    <!-- =======================================================
-  * Template Name: iPortfolio - v1.5.1
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3L2VVRZF5N"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
+    <style>
+        .hero-section {
+            position: relative;
+            height: 60vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('assets/img/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
-        gtag('js', new Date());
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+            position: relative;
+        }
 
-        gtag('config', 'G-3L2VVRZF5N');
-    </script>
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .certifications-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .certification-category {
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .category-header h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .category-header h3 i {
+            color: #149ddd;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .certification-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .certification-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .certification-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .certification-card:hover .certification-image img {
+            transform: scale(1.05);
+        }
+
+        .certification-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .certification-card:hover .certification-overlay {
+            opacity: 1;
+        }
+
+        .certification-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .certification-info {
+            padding: 20px;
+        }
+
+        .certification-info h4 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .certification-info p {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+
+        .certification-date {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .disabled {
+            pointer-events: none;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 
 <body>
-<!-- ======= Mobile nav toggle button ======= -->
-<button class="mobile-nav-toggle d-xl-none" type="button">
-    <i class="icofont-navigation-menu"></i>
-</button>
+    <!-- ======= Mobile nav toggle button ======= -->
+    <button class="mobile-nav-toggle d-xl-none" type="button">
+        <i class="icofont-navigation-menu"></i>
+    </button>
 
-<!-- ======= Header ======= -->
-<header id="header">
-    <div class="d-flex flex-column">
-        <div class="profile">
-            <img alt="" class="img-fluid rounded-circle" src="assets/img/profile-img.jpg"/>
-            <h1 class="text-light"><a href="index.html">Hamza TAHRI</a></h1>
-            <div class="social-links mt-3 text-center">
-                <a class="twitter" href="https://github.com/hamzaTahri"><i class="bx bxl-github"></i></a>
-                <a class="facebook" href="https://web.facebook.com/hamza.tahri.ht/"><i
-                        class="bx bxl-facebook"></i></a>
-                <a class="google-plus" href="mailto:contactHamza.tahri@gmail.com"><i class="bx bx-envelope"></i></a>
-                <a class="linkedin" href="https://www.linkedin.com/in/hamza-tahri"><i
-                        class="bx bxl-linkedin"></i></a>
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+            <div class="profile">
+                <img alt="" class="img-fluid rounded-circle" src="assets/img/profile-img.jpg"/>
+                <h1 class="text-light"><a href="index.html">Hamza TAHRI</a></h1>
+                <div class="social-links mt-3 text-center">
+                    <a class="twitter" href="https://github.com/hamzaTahri"><i class="bx bxl-github"></i></a>
+                    <a class="facebook" href="https://web.facebook.com/hamza.tahri.ht/"><i class="bx bxl-facebook"></i></a>
+                    <a class="google-plus" href="mailto:contactHamza.tahri@gmail.com"><i class="bx bx-envelope"></i></a>
+                    <a class="linkedin" href="https://www.linkedin.com/in/hamza-tahri"><i class="bx bxl-linkedin"></i></a>
+                </div>
             </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="./index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
+                    <li><a href="./index.html#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+                    <li><a href="./index.html#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+                    <li><a href="./index.html#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
+                    <li><a href="./index.html#services"><i class="bx bx-server"></i> Services</a></li>
+                    <li class="active"><a href="./certifications.html"><i class="bx bx-award"></i> Certifications</a></li>
+                    <li><a href="./index.html#contact"><i class="bx bx-envelope"></i> Contact</a></li>
+                    <li><a href="#" class="disabled" data-toggle="tooltip" data-placement="right" title="Coming Soon"><i class="bx bx-world"></i> Lire En Français</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle d-xl-none" type="button">
+                <i class="icofont-navigation-menu"></i>
+            </button>
         </div>
+    </header>
 
-        <nav class="nav-menu">
-            <ul>
-                <li>
-                    <a href="./index.html"><i class="bx bx-home"></i> <span>Home</span></a>
-                </li>
-                <li>
-                    <a href="./index.html#about"><i class="bx bx-user"></i> <span>About</span></a>
-                </li>
-                <li>
-                    <a href="./index.html#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a>
-                </li>
-                <li>
-                    <a href="./index.html#portfolio"><i class="bx bx-book-content"></i> Portfolio</a>
-                </li>
-                <li>
-                    <a href="./index.html#services"><i class="bx bx-server"></i> Services</a>
-                </li>
-                <li class="active">
-                    <a href="./certifications.html"><i class="bx bx-server"></i> Certifications</a>
-                </li>
-                <li>
-                    <a href="./index.html#contact"><i class="bx bx-envelope"></i> Contact</a>
-                </li>
-                <li>
-                    <a href="./Fr/index.html"><i class="bx bx-world"></i> Lire En Français</a>
-                </li>
-            </ul>
-        </nav>
-        <!-- .nav-menu -->
-        <button class="mobile-nav-toggle d-xl-none" type="button">
-            <i class="icofont-navigation-menu"></i>
-        </button>
-    </div>
-</header>
-<!-- End Header -->
-
-<!-- ======= Hero Section ======= -->
-<main id="main">
-    <section class="portfolio section-bg" id="portfolio"
-             style="background: url('./assets/img/hero-bg.jpg');background-size: cover;">
-        <div class="container">
-
-            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt=""
-                             class="img-fluid"
-                             src="../assets/img/portfolio/certifs/AWSCertifiedSolutionsArchitect-certificate.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox"
-                               data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/AWSCertifiedSolutionsArchitect-certificate.jpg"
-                               title="AWS Certified Solutions Architect"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid" src="../assets/img/portfolio/certifs/Coursera_AutoML.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox" data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_AutoML.jpg" title="Coursera Auto ML"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid"
-                             src="../assets/img/portfolio/certifs/Coursera_Microservices.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox"
-                               data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_Microservices.jpg"
-                               title="Coursera Microservices"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid" src="../assets/img/portfolio/certifs/Coursera_CNN.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox" data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_CNN.jpg" title="Coursera CNN"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid"
-                             src="../assets/img/portfolio/certifs/Coursera_Data_Augmentation.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox"
-                               data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_Data_Augmentation.jpg"
-                               title="Coursera Data Augmentation"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid" src="../assets/img/portfolio/certifs/Coursera_Security.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox" data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_Security.jpg" title="Coursera Security"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid"
-                             src="../assets/img/portfolio/certifs/Coursera_SentimentsAnalysis.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox"
-                               data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_SentimentsAnalysis.jpg"
-                               title="Coursera Sentiments Analysis"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid" src="../assets/img/portfolio/certifs/Coursera_Security_2.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox"
-                               data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_Security_2.jpg" title="Coursera Security"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid" src="../assets/img/portfolio/certifs/Coursera_SVM.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox" data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_SVM.jpg" title="Coursera SVM"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid"
-                             src="../assets/img/portfolio/certifs/Coursera_ObjectTracking.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox"
-                               data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_ObjectTracking.jpg"
-                               title="Coursera Object Tracking"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid" src="../assets/img/portfolio/certifs/Coursera_NLP.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox" data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_NLP.jpg" title="Coursera NLP"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid"
-                             src="../assets/img/portfolio/certifs/Coursera_ObjectDetection.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox"
-                               data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Coursera_ObjectDetection.jpg"
-                               title="Coursera Object Detection"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid" src="../assets/img/portfolio/certifs/cisco-certificate-1.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox"
-                               data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/cisco-certificate-1.jpg"
-                               title="Coursera Object Detection"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid" src="assets/img/portfolio/certifs/Huawei_Cloud.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox" data-gall="portfolioGallery"
-                               href="assets/img/portfolio/certifs/Huawei_Cloud.jpg" title="Huawei Cloud"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid" src="../assets/img/portfolio/certifs/Huawei_5G.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox" data-gall="portfolioGallery"
-                               href="../assets/img/portfolio/certifs/Huawei_5G.jpg" title="Huawei 5G"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img alt="" class="img-fluid"
-                             src="../assets/img/portfolio/certifs/cisco-letter-1.jpg"/>
-                        <div class="portfolio-links">
-                            <a class="venobox"
-                               data-gall="portfolioGallery" href="../assets/img/portfolio/certifs/cisco-letter-1.jpg"
-                               title="Coursera Object Detection"><i
-                                    class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
+    <main id="main">
+        <!-- ======= Hero Section ======= -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Professional Certifications</h1>
+                <p>Validating expertise in cloud computing, machine learning, and network technologies</p>
             </div>
-        </div>
-    </section>
-</main>
-<!-- End Hero -->
+        </section>
 
-<!-- End #main -->
+        <!-- ======= Certifications Section ======= -->
+        <section class="certifications-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>My Certifications</h2>
+                    <p>Explore my professional certifications and achievements in various domains</p>
+                </div>
 
-<a class="back-to-top" href="#"><i class="icofont-simple-up"></i></a>
+                <!-- Cloud Computing Certifications -->
+                <div class="certification-category">
+                    <div class="category-header">
+                        <h3><i class="bx bx-cloud"></i> Cloud Computing</h3>
+                    </div>
+                    <div class="certification-grid">
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/AWSCertifiedSolutionsArchitect-certificate.jpg" alt="AWS Certified Solutions Architect">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/AWSCertifiedSolutionsArchitect-certificate.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2024</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>AWS Certified Solutions Architect</h4>
+                                <p>Amazon Web Services</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="assets/img/portfolio/certifs/Huawei_Cloud.jpg" alt="Huawei Cloud">
+                                <div class="certification-overlay">
+                                    <a href="assets/img/portfolio/certifs/Huawei_Cloud.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Huawei Cloud Certification</h4>
+                                <p>Huawei Technologies</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_Microservices.jpg" alt="Coursera Microservices">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_Microservices.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Microservices Architecture</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Vendor JS Files -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/vendor/counterup/counterup.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/typed.js/typed.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
+                <!-- Machine Learning Certifications -->
+                <div class="certification-category">
+                    <div class="category-header">
+                        <h3><i class="bx bx-brain"></i> Machine Learning & AI</h3>
+                    </div>
+                    <div class="certification-grid">
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_AutoML.jpg" alt="Coursera AutoML">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_AutoML.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>AutoML for Computer Vision</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_CNN.jpg" alt="Coursera CNN">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_CNN.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Convolutional Neural Networks</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_NLP.jpg" alt="Coursera NLP">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_NLP.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Natural Language Processing</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_Data_Augmentation.jpg" alt="Coursera Data Augmentation">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_Data_Augmentation.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Data Augmentation</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_SVM.jpg" alt="Coursera SVM">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_SVM.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Support Vector Machines</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_ObjectTracking.jpg" alt="Coursera Object Tracking">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_ObjectTracking.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Object Tracking</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_ObjectDetection.jpg" alt="Coursera Object Detection">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_ObjectDetection.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Object Detection</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_SentimentsAnalysis.jpg" alt="Coursera Sentiment Analysis">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_SentimentsAnalysis.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Sentiment Analysis</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+                <!-- Network & Security Certifications -->
+                <div class="certification-category">
+                    <div class="category-header">
+                        <h3><i class="bx bx-shield"></i> Network & Security</h3>
+                    </div>
+                    <div class="certification-grid">
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/cisco-certificate-1.jpg" alt="Cisco Certification">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/cisco-certificate-1.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Cisco Network Certification</h4>
+                                <p>Cisco Systems</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_Security.jpg" alt="Coursera Security">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_Security.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Network Security</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Coursera_Security_2.jpg" alt="Coursera Security 2">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Coursera_Security_2.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Advanced Network Security</h4>
+                                <p>Coursera</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/cisco-letter-1.jpg" alt="Cisco Letter">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/cisco-letter-1.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Cisco Network Specialist</h4>
+                                <p>Cisco Systems</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-image">
+                                <img src="../assets/img/portfolio/certifs/Huawei_5G.jpg" alt="Huawei 5G">
+                                <div class="certification-overlay">
+                                    <a href="../assets/img/portfolio/certifs/Huawei_5G.jpg" class="venobox" data-gall="certificationsGallery"><i class="bx bx-plus"></i></a>
+                                </div>
+                                <div class="certification-date">2023</div>
+                            </div>
+                            <div class="certification-info">
+                                <h4>Huawei 5G Technology</h4>
+                                <p>Huawei Technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <a class="back-to-top" href="#"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: "ease-in-out",
+            once: true,
+            mirror: false
+        });
+
+        // Initialize VenoBox
+        $(document).ready(function() {
+            $('.venobox').venobox({
+                numeratio: true,
+                infinigall: true
+            });
+
+            // Initialize tooltips
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
-
 </html>
