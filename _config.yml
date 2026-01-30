@@ -1,0 +1,50 @@
+# Site settings
+title: Hamza TAHRI | Software Engineer & Full Stack Developer
+description: >-
+  Software Engineer specializing in Java, Spring Boot, React, and cloud technologies.
+  Experienced in building scalable web applications, microservices, and mobile apps.
+author: Hamza TAHRI
+email: contactHamza.tahri@gmail.com
+url: "https://hamzatahri.github.io"
+baseurl: ""
+
+# Social links
+github_username: hamzaTahri
+linkedin_username: hamza-tahri
+facebook_url: https://web.facebook.com/hamza.tahri.ht/
+
+# Google Analytics
+google_analytics: G-3L2VVRZF5N
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .github
+  - README.md
+  - Readme.md
+
+# Include in build
+include:
+  - _pages
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Collections for projects (optional - for future data-driven approach)
+collections:
+  projects:
+    output: true
+    permalink: /:name-details.html

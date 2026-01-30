@@ -1,0 +1,58 @@
+<!-- ======= Mobile nav toggle button ======= -->
+<button class="mobile-nav-toggle d-xl-none" type="button">
+    <i class="icofont-navigation-menu"></i>
+</button>
+
+<!-- ======= Header ======= -->
+<header id="header"{% if page.layout == 'default' %} class="fixed-top"{% endif %}>
+    <div class="d-flex flex-column">
+        <div class="profile">
+            <img alt="{{ site.author }} - Software Engineer" class="img-fluid rounded-circle" loading="eager" src="{{ '/assets/img/profile-img-b&w.jpg' | relative_url }}">
+            <h1 class="text-light"><a href="{{ '/' | relative_url }}">{{ site.author }}</a></h1>
+            <div class="social-links mt-3 text-center">
+                <a class="social-link" href="https://github.com/{{ site.github_username }}" target="_blank" title="GitHub">
+                    <i class="bx bxl-github"></i>
+                </a>
+                <a class="social-link" href="{{ site.facebook_url }}" target="_blank" title="Facebook">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+                <a class="social-link" href="mailto:{{ site.email }}" title="Email">
+                    <i class="bx bx-envelope"></i>
+                </a>
+                <a class="social-link" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" title="LinkedIn">
+                    <i class="bx bxl-linkedin"></i>
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li{% if page.url == '/' or page.url == '/index.html' %} class="active"{% endif %}>
+                    <a href="{{ '/' | relative_url }}"><i class="bx bx-home"></i> <span>Home</span></a>
+                </li>
+                <li{% if page.nav_active == 'about' %} class="active"{% endif %}>
+                    <a href="{{ '/#about' | relative_url }}"><i class="bx bx-user"></i> <span>About</span></a>
+                </li>
+                <li{% if page.nav_active == 'resume' %} class="active"{% endif %}>
+                    <a href="{{ '/#resume' | relative_url }}"><i class="bx bx-file-blank"></i> <span>Resume</span></a>
+                </li>
+                <li{% if page.nav_active == 'portfolio' or page.layout == 'project-detail' %} class="active"{% endif %}>
+                    <a href="{{ '/#portfolio' | relative_url }}"><i class="bx bx-book-content"></i> <span>Portfolio</span></a>
+                </li>
+                <li{% if page.nav_active == 'services' %} class="active"{% endif %}>
+                    <a href="{{ '/#services' | relative_url }}"><i class="bx bx-server"></i> <span>Services</span></a>
+                </li>
+                <li{% if page.url contains 'certifications' %} class="active"{% endif %}>
+                    <a href="{{ '/certifications.html' | relative_url }}"><i class="bx bx-award"></i> <span>Certifications</span></a>
+                </li>
+                <li{% if page.nav_active == 'contact' %} class="active"{% endif %}>
+                    <a href="{{ '/#contact' | relative_url }}"><i class="bx bx-envelope"></i> <span>Contact</span></a>
+                </li>
+            </ul>
+        </nav>
+        <button class="mobile-nav-toggle d-xl-none" type="button">
+            <i class="icofont-navigation-menu"></i>
+        </button>
+    </div>
+</header>
+<!-- End Header -->

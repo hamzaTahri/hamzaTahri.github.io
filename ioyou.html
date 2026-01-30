@@ -1,627 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: project-detail
+title: IoYou Details
+description: A cross-platform mobile application built with React Native for tracking money transactions between friends
+keywords: react native, expo, supabase, mobile, money tracking
+project_title: Friends Transaction Tracker
+project_subtitle: A cross-platform mobile application built with React Native for tracking money transactions between friends
+hero_image: assets/img/ioyou/2025-04-26 at 13.11.00.jpeg
+---
 
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>IoYou Details</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-
-    <style>
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            margin-bottom: 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('assets/img/ebankingMobile/combine_images.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-            z-index: 2;
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            font-weight: 500;
-        }
-
-        .project-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: #6c757d;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .project-meta {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            background: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .meta-item i {
-            font-size: 1.5rem;
-            color: #149ddd;
-        }
-
-        .meta-item span {
-            font-size: 1.1rem;
-            color: #2c3e50;
-        }
-
-        .tech-stack-section {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-top: 40px;
-        }
-
-        .tech-stack-section h3 {
-            text-align: center;
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-
-        .tech-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .tech-item {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .tech-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .tech-item i {
-            font-size: 3rem;
-            color: #149ddd;
-            margin-bottom: 15px;
-        }
-
-        .tech-item span {
-            font-size: 1.2rem;
-            color: #2c3e50;
-            font-weight: 500;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #149ddd;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-        }
-
-        .project-link:hover {
-            background: #0d6efd;
-            transform: translateY(-3px);
-            color: white;
-        }
-
-        .gallery-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .gallery-header h2 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .gallery-header p {
-            font-size: 1.2rem;
-            color: #6c757d;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            aspect-ratio: 16/9;
-            cursor: pointer;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-item-overlay {
-            opacity: 1;
-        }
-
-        .gallery-item-overlay i {
-            color: white;
-            font-size: 2rem;
-        }
-
-        /* Lightbox Styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-            z-index: 10000;
-        }
-
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            object-fit: contain;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 10001;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-            z-index: 10001;
-        }
-
-        .lightbox-nav button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 10001;
-        }
-
-        .lightbox-nav button:hover {
-            color: #149ddd;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- ======= Mobile nav toggle button ======= -->
-    <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
-    <!-- ======= Header ======= -->
-    <header id="header">
-        <div class="d-flex flex-column">
-            <div class="profile">
-                <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-                <h1 class="text-light"><a href="index.html">Hamza TAHRI</a></h1>
-                <div class="social-links mt-3 text-center">
-                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="https://web.facebook.com/hamza.tahri.ht/" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="mailto:contactHamza.tahri@gmail.com" class="google-plus"><i class="bx bx-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/hamza-tahri" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                </div>
-            </div>
-
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
-                    <li><a href="index.html#about"><i class="bx bx-user"></i> <span>About</span></a></li>
-                    <li><a href="index.html#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-                    <li class="active"><a href="index.html#portfolio"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-                    <li><a href="index.html#services"><i class="bx bx-server"></i> <span>Services</span></a></li>
-                    <li><a href="index.html#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-                </ul>
-            </nav>
-            <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+<!-- Project Section -->
+<section class="project-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Project Overview</h2>
+            <p>A comprehensive money tracking solution for Android and iOS platforms</p>
         </div>
-    </header>
 
-    <main id="main">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Friends Transaction Tracker</h1>
-                <p>A cross-platform mobile application built with react native for tracking money transactions between friends</p>
+        <div class="project-meta">
+            <div class="meta-item">
+                <i class="bx bx-building"></i>
+                <span>Personal Project</span>
             </div>
-        </section>
-
-        <!-- Project Section -->
-        <section class="project-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Project Overview</h2>
-                    <p>A comprehensive money tracking solution for Android and iOS platforms</p>
-                </div>
-
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <i class="bx bx-building"></i>
-                        <span>Personal Project</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="bx bx-calendar"></i>
-                        <span>April 2025</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="bx bx-code-alt"></i>
-                        <span>Mobile App</span>
-                    </div>
-                </div>
-
-                <div class="tech-stack-section">
-                    <h3>Technologies Used</h3>
-                    <div class="tech-stack">
-                        <div class="tech-item">
-                            <i class="bx bxl-react"></i>
-                            <span>React Native</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="bx bxl-expo"></i>
-                            <span>Expo</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="bx bx-mobile-alt"></i>
-                            <span>Mobile UI</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="bx bx-server"></i>
-                            <span>Supabase</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <a href="#" class="project-link">
-                        View on GitHub <i class="bx bx-right-arrow-alt"></i>
-                    </a>
-                </div>
+            <div class="meta-item">
+                <i class="bx bx-calendar"></i>
+                <span>April 2025</span>
             </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section class="gallery-section">
-            <div class="container">
-                <div class="gallery-header">
-                    <h2>Project Gallery</h2>
-                    <p>Explore the key features and interface of our Money Tracking App</p>
-                </div>
-
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00.jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.00.jpeg" alt="IOYou App Interface">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (1).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (1).jpeg" alt="IOYou App Feature 1">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (2).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (2).jpeg" alt="IOYou App Feature 2">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (3).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (3).jpeg" alt="IOYou App Feature 3">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (4).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (4).jpeg" alt="IOYou App Feature 4">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (5).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (5).jpeg" alt="IOYou App Feature 5">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (6).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (6).jpeg" alt="IOYou App Feature 6">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (7).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (7).jpeg" alt="IOYou App Feature 7">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.01.jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.01.jpeg" alt="IOYou App Feature 8">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.01 (1).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.01 (1).jpeg" alt="IOYou App Feature 9">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.01 (2).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.01 (2).jpeg" alt="IOYou App Feature 10">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.01 (3).jpeg">
-                        <img src="assets/img/ioyou/2025-04-26 at 13.11.01 (3).jpeg" alt="IOYou App Feature 11">
-                        <div class="gallery-item-overlay">
-                            <i class="bx bx-zoom-in"></i>
-                        </div>
-                    </div>
-                </div>
+            <div class="meta-item">
+                <i class="bx bx-code-alt"></i>
+                <span>Mobile App</span>
             </div>
-        </section>
+        </div>
 
-        <!-- Lightbox -->
-        <div class="lightbox">
-            <div class="lightbox-content">
-                <span class="lightbox-close">&times;</span>
-                <img src="" alt="">
-                <div class="lightbox-nav">
-                    <button class="lightbox-prev"><i class="bx bx-chevron-left"></i></button>
-                    <button class="lightbox-next"><i class="bx bx-chevron-right"></i></button>
+        <div class="tech-stack-section">
+            <h3>Technologies Used</h3>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="bx bxl-react"></i>
+                    <span>React Native</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bxl-expo"></i>
+                    <span>Expo</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bx-mobile-alt"></i>
+                    <span>Mobile UI</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bx-server"></i>
+                    <span>Supabase</span>
                 </div>
             </div>
         </div>
-    </main>
 
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+        <div class="text-center">
+            <a href="#" class="project-link">
+                View on GitHub <i class="bx bx-right-arrow-alt"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="assets/vendor/counterup/counterup.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/venobox/venobox.min.js"></script>
-    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendor/typed.js/typed.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
+<!-- Gallery Section -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="gallery-header">
+            <h2>Project Gallery</h2>
+            <p>Explore the key features and interface of our Money Tracking App</p>
+        </div>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-
-    <!-- Lightbox Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const lightbox = document.querySelector('.lightbox');
-            const lightboxImg = lightbox.querySelector('img');
-            const lightboxClose = lightbox.querySelector('.lightbox-close');
-            const lightboxPrev = lightbox.querySelector('.lightbox-prev');
-            const lightboxNext = lightbox.querySelector('.lightbox-next');
-            let currentImageIndex = 0;
-
-            // Open lightbox
-            galleryItems.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    currentImageIndex = index;
-                    updateLightboxImage();
-                    lightbox.classList.add('active');
-                });
-            });
-
-            // Close lightbox
-            lightboxClose.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-            });
-
-            // Close lightbox on click outside
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    lightbox.classList.remove('active');
-                }
-            });
-
-            // Previous image
-            lightboxPrev.addEventListener('click', () => {
-                currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
-                updateLightboxImage();
-            });
-
-            // Next image
-            lightboxNext.addEventListener('click', () => {
-                currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
-                updateLightboxImage();
-            });
-
-            // Update lightbox image
-            function updateLightboxImage() {
-                const imageUrl = galleryItems[currentImageIndex].getAttribute('data-image');
-                lightboxImg.src = imageUrl;
-            }
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (!lightbox.classList.contains('active')) return;
-
-                if (e.key === 'Escape') {
-                    lightbox.classList.remove('active');
-                } else if (e.key === 'ArrowLeft') {
-                    currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
-                    updateLightboxImage();
-                } else if (e.key === 'ArrowRight') {
-                    currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
-                    updateLightboxImage();
-                }
-            });
-        });
-    </script>
-</body>
-
-</html>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00.jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.00.jpeg" alt="IOYou App Interface" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (1).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (1).jpeg" alt="IOYou App Feature 1" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (2).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (2).jpeg" alt="IOYou App Feature 2" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (3).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (3).jpeg" alt="IOYou App Feature 3" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (4).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (4).jpeg" alt="IOYou App Feature 4" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (5).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (5).jpeg" alt="IOYou App Feature 5" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (6).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (6).jpeg" alt="IOYou App Feature 6" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.00 (7).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.00 (7).jpeg" alt="IOYou App Feature 7" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.01.jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.01.jpeg" alt="IOYou App Feature 8" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.01 (1).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.01 (1).jpeg" alt="IOYou App Feature 9" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.01 (2).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.01 (2).jpeg" alt="IOYou App Feature 10" loading="lazy">
+            </div>
+            <div class="gallery-item" data-image="assets/img/ioyou/2025-04-26 at 13.11.01 (3).jpeg">
+                <img src="assets/img/ioyou/2025-04-26 at 13.11.01 (3).jpeg" alt="IOYou App Feature 11" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>

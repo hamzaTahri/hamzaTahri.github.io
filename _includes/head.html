@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="keywords" content="{{ page.keywords | default: 'Hamza TAHRI, software engineer, full stack developer, Java, Spring Boot, React, Angular, AWS, cloud computing, Morocco, web developer' }}">
+<meta name="author" content="{{ site.author }}">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+
+<!-- Favicons -->
+<link href="{{ '/assets/img/favicon.png' | relative_url }}" rel="icon">
+<link href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700|Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="{{ '/assets/vendor/bootstrap/css/bootstrap.min.css' | relative_url }}" rel="stylesheet">
+<link href="{{ '/assets/vendor/icofont/icofont.min.css' | relative_url }}" rel="stylesheet">
+<link href="{{ '/assets/vendor/boxicons/css/boxicons.min.css' | relative_url }}" rel="stylesheet">
+<link href="{{ '/assets/vendor/venobox/venobox.css' | relative_url }}" rel="stylesheet">
+<link href="{{ '/assets/vendor/owl.carousel/assets/owl.carousel.min.css' | relative_url }}" rel="stylesheet">
+<link href="{{ '/assets/vendor/aos/aos.css' | relative_url }}" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
+
+{% if site.google_analytics %}
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+</script>
+{% endif %}
