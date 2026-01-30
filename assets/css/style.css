@@ -74,6 +74,32 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--secondary-color);
+  z-index: 99999;
+  transition: width 0.1s ease-out;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Better focus states for accessibility */
+:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 3px;
+}
+
 a {
   color: var(--secondary-color);
 }
@@ -123,12 +149,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .theme-toggle i {
   font-size: 20px;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .theme-toggle:hover i {
-  transform: rotate(180deg);
+  transform: rotate(15deg);
 }
+
+/* Sun/Moon icon states */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: inline-block; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: inline-block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 [data-theme="dark"] .theme-toggle {
   background: rgba(100, 255, 218, 0.15);
@@ -166,8 +198,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .back-to-top:hover {
   color: var(--primary-color);
-  background: var(--primary-color);
-  transition: background 0.2s ease-in-out;
+  background: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
 }
 
 /*--------------------------------------------------------------
@@ -405,13 +438,27 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(10, 25, 47, 0.8);
+  background: linear-gradient(135deg, rgba(10, 25, 47, 0.9) 0%, rgba(10, 25, 47, 0.7) 100%);
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
+}
+
+/* Subtle floating particles effect */
+#hero:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(100, 255, 218, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(100, 255, 218, 0.03) 0%, transparent 50%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-container {

@@ -40,6 +40,23 @@
   };
 
   /**
+   * Scroll progress bar
+   */
+  const initScrollProgress = () => {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    progressBar.style.width = '0%';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = progress + '%';
+    }, { passive: true });
+  };
+
+  /**
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
@@ -57,7 +74,6 @@
    */
   const initThemeToggle = () => {
     const themeToggle = select('#theme-toggle');
-    const themeIcon = select('#theme-icon');
     
     if (!themeToggle) return;
 
@@ -68,10 +84,6 @@
     // Apply initial theme
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       document.documentElement.setAttribute('data-theme', 'dark');
-      if (themeIcon) {
-        themeIcon.classList.remove('bx-sun');
-        themeIcon.classList.add('bx-moon');
-      }
     }
 
     // Toggle theme on click
@@ -81,16 +93,6 @@
       
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
-      
-      if (themeIcon) {
-        if (newTheme === 'dark') {
-          themeIcon.classList.remove('bx-sun');
-          themeIcon.classList.add('bx-moon');
-        } else {
-          themeIcon.classList.remove('bx-moon');
-          themeIcon.classList.add('bx-sun');
-        }
-      }
     });
   };
 
@@ -406,6 +408,7 @@
    * Initialize all modules on DOM ready
    */
   document.addEventListener('DOMContentLoaded', () => {
+    initScrollProgress();
     initThemeToggle();
     initTyped();
     initMobileNav();
