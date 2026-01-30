@@ -19,7 +19,6 @@ google_analytics: G-3L2VVRZF5N
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: pretty
 
 # Exclude from build
 exclude:
