@@ -1,0 +1,76 @@
+# GitHub Actions workflow for building and deploying Jekyll site
+name: Deploy Jekyll Site
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
+      - name: Build with Jekyll
+        run: |
+          bundle install
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Optimize images
+        run: |
+          # Install image optimization tools
+          sudo apt-get update
+          sudo apt-get install -y jpegoptim optipng
+          
+          # Optimize JPEG images
+          find _site/assets/img -name "*.jpg" -o -name "*.jpeg" | head -50 | xargs -I {} jpegoptim --strip-all --max=85 {} 2>/dev/null || true
+          
+          # Optimize PNG images  
+          find _site/assets/img -name "*.png" | head -50 | xargs -I {} optipng -o2 -quiet {} 2>/dev/null || true
+
+      - name: Minify CSS
+        run: |
+          # Install cssnano via npm
+          npm install cssnano postcss postcss-cli --save-dev
+          
+          # Minify main CSS file
+          npx postcss _site/assets/css/style.css -o _site/assets/css/style.css --use cssnano || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
