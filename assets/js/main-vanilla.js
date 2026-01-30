@@ -53,6 +53,48 @@
   };
 
   /**
+   * Theme toggle (dark/light mode)
+   */
+  const initThemeToggle = () => {
+    const themeToggle = select('#theme-toggle');
+    const themeIcon = select('#theme-icon');
+    
+    if (!themeToggle) return;
+
+    // Check for saved theme preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Apply initial theme
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (themeIcon) {
+        themeIcon.classList.remove('bx-sun');
+        themeIcon.classList.add('bx-moon');
+      }
+    }
+
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      if (themeIcon) {
+        if (newTheme === 'dark') {
+          themeIcon.classList.remove('bx-sun');
+          themeIcon.classList.add('bx-moon');
+        } else {
+          themeIcon.classList.remove('bx-moon');
+          themeIcon.classList.add('bx-sun');
+        }
+      }
+    });
+  };
+
+  /**
    * Hero typed effect
    */
   const initTyped = () => {
@@ -364,6 +406,7 @@
    * Initialize all modules on DOM ready
    */
   document.addEventListener('DOMContentLoaded', () => {
+    initThemeToggle();
     initTyped();
     initMobileNav();
     initSmoothScroll();
