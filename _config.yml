@@ -47,3 +47,4 @@ collections:
   projects:
     output: true
     permalink: /:name-details.html
+
