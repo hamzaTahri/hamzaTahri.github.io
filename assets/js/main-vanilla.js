@@ -60,9 +60,19 @@
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
-    let header = select('#header');
-    let offset = header ? header.offsetHeight : 0;
-    let elementPos = select(el).offsetTop;
+    const targetElement = select(el);
+    if (!targetElement) return;
+    
+    // No offset needed since header is a sidebar, not top bar
+    let offset = 0;
+    
+    // Small offset for spacing
+    if (window.innerWidth >= 1200) {
+      offset = 20; // Just a small padding on desktop
+    }
+    
+    const elementPos = targetElement.offsetTop;
+    
     window.scrollTo({
       top: elementPos - offset,
       behavior: 'smooth'
@@ -145,27 +155,45 @@
    * Smooth scroll for navigation and scrollto links
    */
   const initSmoothScroll = () => {
-    on('click', '.nav-menu a, .scrollto', function(e) {
-      if (this.hash && select(this.hash)) {
-        e.preventDefault();
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-menu a, .scrollto, a[href^="#"]');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const hash = this.hash;
+        
+        // Only handle links with hash that point to elements on this page
+        if (hash && hash !== '' && hash !== '#') {
+          const targetElement = document.querySelector(hash);
+          
+          if (targetElement) {
+            e.preventDefault();
 
-        if (document.body.classList.contains('mobile-nav-active')) {
-          document.body.classList.remove('mobile-nav-active');
-          const toggleIcon = select('.mobile-nav-toggle i');
-          if (toggleIcon) {
-            toggleIcon.classList.add('icofont-navigation-menu');
-            toggleIcon.classList.remove('icofont-close');
+            // Close mobile menu if open
+            if (document.body.classList.contains('mobile-nav-active')) {
+              document.body.classList.remove('mobile-nav-active');
+              const toggleIcon = select('.mobile-nav-toggle i');
+              if (toggleIcon) {
+                toggleIcon.classList.add('icofont-navigation-menu');
+                toggleIcon.classList.remove('icofont-close');
+              }
+            }
+            
+            // Scroll to the target
+            scrollto(hash);
           }
         }
-        scrollto(this.hash);
-      }
-    }, true);
+      });
+    });
 
     // Scroll to hash on page load
-    if (window.location.hash && select(window.location.hash)) {
-      setTimeout(() => {
-        scrollto(window.location.hash);
-      }, 100);
+    if (window.location.hash && window.location.hash !== '') {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        setTimeout(() => {
+          scrollto(window.location.hash);
+        }, 100);
+      }
     }
   };
 
@@ -405,6 +433,82 @@
   };
 
   /**
+   * Initialize scroll indicators for scrollable sections
+   */
+  const initScrollIndicators = () => {
+    // Helper function to setup scroll indicators for a section
+    const setupScrollIndicator = (scrollContainerId, dotsContainerId, itemsSelector) => {
+      const scrollContainer = select(scrollContainerId);
+      const dotsContainer = select(dotsContainerId);
+      
+      if (!scrollContainer || !dotsContainer) return;
+
+      // Get all items
+      const items = select(itemsSelector, true);
+      
+      if (!items || items.length === 0) return;
+
+      // Create dots
+      dotsContainer.innerHTML = '';
+      items.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'scroll-dot';
+        if (index === 0) dot.classList.add('active');
+        
+        // Make dots clickable to scroll to specific item
+        dot.addEventListener('click', () => {
+          const targetItem = items[index];
+          scrollContainer.scrollTo({
+            left: targetItem.offsetLeft - scrollContainer.offsetLeft,
+            behavior: 'smooth'
+          });
+        });
+        
+        dotsContainer.appendChild(dot);
+      });
+
+      // Update active dot on scroll
+      const updateActiveDot = () => {
+        const scrollLeft = scrollContainer.scrollLeft;
+        const containerLeft = scrollContainer.offsetLeft;
+        
+        let activeIndex = 0;
+        let minDistance = Infinity;
+        
+        // Find which item is closest to the viewport
+        items.forEach((item, index) => {
+          const itemLeft = item.offsetLeft - containerLeft;
+          const distance = Math.abs(scrollLeft - itemLeft);
+          
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeIndex = index;
+          }
+        });
+        
+        // Update dots
+        const dots = dotsContainer.querySelectorAll('.scroll-dot');
+        dots.forEach((dot, index) => {
+          if (index === activeIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      };
+
+      // Listen to scroll events
+      scrollContainer.addEventListener('scroll', updateActiveDot, { passive: true });
+    };
+
+    // Setup for experience section
+    setupScrollIndicator('#experienceScroll', '#experienceDots', '.experience-section .resume-item');
+    
+    // Setup for education section
+    setupScrollIndicator('#educationScroll', '#educationDots', '.education-section .col-lg-6');
+  };
+
+  /**
    * Initialize all modules on DOM ready
    */
   document.addEventListener('DOMContentLoaded', () => {
@@ -420,6 +524,7 @@
     initVenoBox();
     initTestimonialsCarousel();
     initPortfolioCarousel();
+    initScrollIndicators();
   });
 
   /**
