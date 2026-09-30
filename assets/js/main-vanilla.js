@@ -251,7 +251,7 @@
    * Counter animation
    */
   const initCounter = () => {
-    const counters = select('[data-toggle="counter-up"]', true);
+    const counters = select('[data-toggle="counter-up"], [data-bs-toggle="counter-up"]', true);
     if (counters.length === 0) return;
 
     const animateCounter = (counter) => {
@@ -450,10 +450,13 @@
 
       // Create dots
       dotsContainer.innerHTML = '';
-      items.forEach((_, index) => {
+      items.forEach((item, index) => {
         const dot = document.createElement('div');
         dot.className = 'scroll-dot';
-        if (index === 0) dot.classList.add('active');
+        if (index === 0) {
+          dot.classList.add('active');
+          item.classList.add('active');
+        }
         
         // Make dots clickable to scroll to specific item
         dot.addEventListener('click', () => {
@@ -486,13 +489,21 @@
           }
         });
         
-        // Update dots
+        // Update dots and items
         const dots = dotsContainer.querySelectorAll('.scroll-dot');
         dots.forEach((dot, index) => {
           if (index === activeIndex) {
             dot.classList.add('active');
           } else {
             dot.classList.remove('active');
+          }
+        });
+
+        items.forEach((item, index) => {
+          if (index === activeIndex) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
           }
         });
       };
@@ -506,6 +517,24 @@
     
     // Setup for education section
     setupScrollIndicator('#educationScroll', '#educationDots', '.education-section .col-lg-6');
+  };
+
+  /**
+   * Contact form mailto handler
+   */
+  window.sendMail = function() {
+    const nameEl = select('#name');
+    const emailEl = select('#email');
+    const subjectEl = select('#subject');
+    const messageEl = select('#message');
+    
+    const name = nameEl ? nameEl.value : '';
+    const email = emailEl ? emailEl.value : '';
+    const subject = subjectEl ? subjectEl.value : 'Portfolio Contact';
+    const message = messageEl ? messageEl.value : '';
+    
+    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+    window.location.href = `mailto:contactHamza.tahri@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
   };
 
   /**
