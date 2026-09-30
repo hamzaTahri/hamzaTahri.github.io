@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#042f2e"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" rx="16" fill="url(#goBg)"/>
+  <rect x="2" y="2" width="596" height="396" rx="14" fill="none" stroke="#134e4a" stroke-width="2"/>
+
+  <!-- Title Pill -->
+  <rect x="40" y="30" width="190" height="30" rx="15" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+  <text x="135" y="50" text-anchor="middle" font-family="'Open Sans', sans-serif" font-weight="600" font-size="12" fill="#6ee7b7" letter-spacing="1">
+    SPEC-DRIVEN GO BACKEND
+  </text>
+
+  <!-- Flow Boxes -->
+  <!-- Step 1: OpenSpec -->
+  <rect x="40" y="100" width="150" height="130" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="115" y="130" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="15" fill="#34d399">
+    1. OpenSpec
+  </text>
+  <text x="115" y="155" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Architecture Contracts
+  </text>
+  <text x="115" y="175" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Domain Entities
+  </text>
+  <text x="115" y="195" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Invariants &amp; Rules
+  </text>
+
+  <!-- Arrow 1 -->
+  <path d="M195 165 L225 165" stroke="#10b981" stroke-width="2" fill="none"/>
+
+  <!-- Step 2: Go Microservice Engine -->
+  <rect x="230" y="90" width="160" height="150" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+  <text x="310" y="125" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="15" fill="#a7f3d0">
+    2. Go Clean Arch
+  </text>
+  <text x="310" y="150" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#e2e8f0">
+    • Hexagonal Ports
+  </text>
+  <text x="310" y="170" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#e2e8f0">
+    • Zero Reflection
+  </text>
+  <text x="310" y="190" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#e2e8f0">
+    • High Concurrency
+  </text>
+  <text x="310" y="210" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#e2e8f0">
+    • Contract Tests
+  </text>
+
+  <!-- Arrow 2 -->
+  <path d="M395 165 L425 165" stroke="#10b981" stroke-width="2" fill="none"/>
+
+  <!-- Step 3: Verifiable Commit -->
+  <rect x="430" y="100" width="135" height="130" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="497" y="130" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="15" fill="#34d399">
+    3. Production
+  </text>
+  <text x="497" y="155" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Deterministic Build
+  </text>
+  <text x="497" y="175" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Traceable Commit
+  </text>
+  <text x="497" y="195" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Zero Drift
+  </text>
+
+  <!-- Bottom Stats Bar -->
+  <rect x="40" y="275" width="525" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="130" y="310" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="22" fill="#34d399">
+    100%
+  </text>
+  <text x="130" y="335" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Contract Conformance
+  </text>
+
+  <line x1="220" y1="290" x2="220" y2="345" stroke="#334155" stroke-width="1"/>
+
+  <text x="310" y="310" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="22" fill="#38bdf8">
+    &lt;5ms
+  </text>
+  <text x="310" y="335" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Execution Latency
+  </text>
+
+  <line x1="400" y1="290" x2="400" y2="345" stroke="#334155" stroke-width="1"/>
+
+  <text x="480" y="310" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="22" fill="#fbbf24">
+    Zero
+  </text>
+  <text x="480" y="335" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Spec-to-Code Drift
+  </text>
+</svg>

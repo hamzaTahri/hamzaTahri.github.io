@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="aiPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" rx="16" fill="url(#aiBg)"/>
+  <rect x="2" y="2" width="596" height="396" rx="14" fill="none" stroke="#312e81" stroke-width="2"/>
+
+  <!-- Title Pill -->
+  <rect x="40" y="30" width="180" height="30" rx="15" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+  <text x="130" y="50" text-anchor="middle" font-family="'Open Sans', sans-serif" font-weight="600" font-size="12" fill="#a5b4fc" letter-spacing="1">
+    ENTERPRISE AI ARCHITECTURE
+  </text>
+
+  <!-- Left: Coding Agent / LLM -->
+  <rect x="45" y="90" width="150" height="150" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+  <text x="120" y="125" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="15" fill="#c084fc">
+    AI Coding Agent
+  </text>
+  <text x="120" y="150" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Claude / Copilot
+  </text>
+  <text x="120" y="172" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Spec-Driven Prompts
+  </text>
+  <text x="120" y="195" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Domain Constraints
+  </text>
+  <text x="120" y="218" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10" fill="#38bdf8">
+    Context Requests
+  </text>
+
+  <!-- Middle: MCP Server -->
+  <rect x="225" y="80" width="150" height="170" rx="10" fill="#2e1065" stroke="#a855f7" stroke-width="2"/>
+  <text x="300" y="115" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="16" fill="#f0abfc">
+    MCP Server
+  </text>
+  <text x="300" y="135" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#cbd5e1">
+    Context Engine
+  </text>
+  <line x1="245" y1="145" x2="355" y2="145" stroke="#581c87" stroke-width="1"/>
+  <text x="300" y="165" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#e9d5ff">
+    • AST Parser
+  </text>
+  <text x="300" y="185" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#e9d5ff">
+    • Vector Retrieval
+  </text>
+  <text x="300" y="205" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#e9d5ff">
+    • ADR &amp; Spec Injector
+  </text>
+  <text x="300" y="228" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10" fill="#4ade80">
+    Hallucination Filter
+  </text>
+
+  <!-- Right: Enterprise Codebase -->
+  <rect x="405" y="90" width="150" height="150" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="480" y="125" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="15" fill="#38bdf8">
+    Enterprise Repos
+  </text>
+  <text x="480" y="150" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Vector Database
+  </text>
+  <text x="480" y="172" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    OpenSpec Artifacts
+  </text>
+  <text x="480" y="195" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#94a3b8">
+    Git History &amp; ADRs
+  </text>
+  <text x="480" y="218" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10" fill="#c084fc">
+    Live Context Source
+  </text>
+
+  <!-- Bottom Stats Bar -->
+  <rect x="45" y="275" width="510" height="85" rx="10" fill="#111827" stroke="#374151" stroke-width="1.5"/>
+  <text x="130" y="310" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="22" fill="#4ade80">
+    -60%
+  </text>
+  <text x="130" y="335" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#9ca3af">
+    LLM Hallucinations
+  </text>
+
+  <line x1="215" y1="290" x2="215" y2="345" stroke="#374151" stroke-width="1"/>
+
+  <text x="300" y="310" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="22" fill="#c084fc">
+    +35%
+  </text>
+  <text x="300" y="335" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#9ca3af">
+    Team Dev Velocity
+  </text>
+
+  <line x1="385" y1="290" x2="385" y2="345" stroke="#374151" stroke-width="1"/>
+
+  <text x="470" y="310" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="22" fill="#38bdf8">
+    30+ Engineers
+  </text>
+  <text x="470" y="335" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11" fill="#9ca3af">
+    AI Dojo Upskilled
+  </text>
+</svg>

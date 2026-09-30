@@ -1,0 +1,134 @@
+---
+layout: project-detail
+title: Spec-to-Commit Go Microservice Backend
+description: Open-source reference implementation demonstrating Spec-Driven Development in Go, turning specifications into shippable code with verifiable audit trails.
+keywords: Go, golang, spec-driven development, openspec, microservices, clean architecture, hexagonal architecture, bdd
+project_title: Spec-to-Commit Go Microservice
+project_subtitle: Spec-Driven Development, Clean Hexagonal Architecture & Verifiable Audit Trails in Go
+hero_image: assets/img/portfolio/spec-to-commit.svg
+---
+
+<!-- Project Section -->
+<section class="project-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Architectural Overview</h2>
+            <p>A reference microservice architecture in Go demonstrating the Spec-Driven Development lifecycle: transforming formal specifications directly into testable, production-ready code with zero drift.</p>
+        </div>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <i class="bx bxl-go-lang"></i>
+                <span>Go (Golang)</span>
+            </div>
+            <div class="meta-item">
+                <i class="bx bx-calendar"></i>
+                <span>2024</span>
+            </div>
+            <div class="meta-item">
+                <i class="bx bx-git-repo-forked"></i>
+                <span>Open Source / Architecture</span>
+            </div>
+        </div>
+
+        <!-- Architectural Problem & Solution -->
+        <div class="row my-5">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 p-4 border-0 shadow-sm" style="background: var(--card-bg, #ffffff); border-radius: 12px;">
+                    <h4 class="text-primary mb-3"><i class="bx bx-error-circle"></i> The Specification Drift Problem</h4>
+                    <p>
+                        In distributed microservice environments, requirements and API specifications rapidly diverge from the codebase implementation. Hand-written models drift, integration tests become obsolete, and teams spend hundreds of hours diagnosing contract violations across microservice boundaries.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 p-4 border-0 shadow-sm" style="background: var(--card-bg, #ffffff); border-radius: 12px;">
+                    <h4 class="text-success mb-3"><i class="bx bx-check-shield"></i> The Spec-to-Commit Solution</h4>
+                    <p>
+                        Built a clean hexagonal architecture in Go where code generation and contract validation are driven strictly by OpenSpec definitions. Domain rules, ports, and adapters are verified by automated contract tests before committing, ensuring 100% spec-to-code conformance and sub-5ms request latency.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-stack-section">
+            <h3>Technologies & Architectural Patterns</h3>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="bx bxl-go-lang"></i>
+                    <span>Go (1.22+)</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bx-shape-polygon"></i>
+                    <span>Hexagonal Architecture</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bx-file"></i>
+                    <span>OpenSpec Schema</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bx-test-tube"></i>
+                    <span>Contract Testing</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bxl-docker"></i>
+                    <span>Docker Distroless</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bx-git-commit"></i>
+                    <span>Deterministic CI</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Architectural Highlights -->
+        <div class="my-5">
+            <h3 class="text-center mb-4">Architectural Highlights</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-3 border rounded text-center h-100" style="background: var(--light-bg, #f8fafc);">
+                        <i class="bx bx-check-double text-success" style="font-size: 2.5rem;"></i>
+                        <h5 class="mt-2">100% Conformance</h5>
+                        <p class="text-muted small">Every endpoint, domain invariant, and error response is mathematically verified against the OpenSpec definition.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border rounded text-center h-100" style="background: var(--light-bg, #f8fafc);">
+                        <i class="bx bx-zap text-warning" style="font-size: 2.5rem;"></i>
+                        <h5 class="mt-2">&lt;5ms Request P99</h5>
+                        <p class="text-muted small">Zero reflection, allocated memory buffers, and idiomatic Go concurrency deliver ultra-low latency response times.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border rounded text-center h-100" style="background: var(--light-bg, #f8fafc);">
+                        <i class="bx bx-git-pull-request text-primary" style="font-size: 2.5rem;"></i>
+                        <h5 class="mt-2">Audit-Ready Commits</h5>
+                        <p class="text-muted small">Cryptographically signed commits linked directly to approved architectural decision documents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="index.html#portfolio" class="project-link">
+                <i class="bx bx-left-arrow-alt"></i> Back to Portfolio
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="gallery-header">
+            <h2>Spec-Driven Lifecycle Diagram</h2>
+            <p>From OpenSpec contract definition through hexagonal ports to verified production commit</p>
+        </div>
+
+        <div class="gallery-grid justify-content-center">
+            <div class="gallery-item w-100 text-center" data-image="assets/img/portfolio/spec-to-commit.svg">
+                <img src="assets/img/portfolio/spec-to-commit.svg" alt="Spec-to-Commit Go Microservice Architecture" class="img-fluid rounded shadow" style="max-height: 480px;" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>

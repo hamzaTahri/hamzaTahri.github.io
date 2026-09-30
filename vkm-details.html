@@ -1,0 +1,142 @@
+---
+layout: project-detail
+title: Renault Virtual Key Manager (VKM)
+description: Cloud-to-vehicle distributed IoT backend operating over secure cryptographic handshakes and high-throughput Kafka event streams.
+keywords: connected vehicles, IoT, Renault Digital, virtual key manager, kafka, spring boot, java, gcp, kubernetes, pki, cryptography
+project_title: Renault Virtual Key Manager (VKM)
+project_subtitle: Distributed IoT Cloud Architecture & Cryptographic Key Management for Connected Vehicles
+hero_image: assets/img/portfolio/vkm-architecture.svg
+---
+
+<!-- Project Section -->
+<section class="project-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Architectural Overview</h2>
+            <p>Mission-critical cloud backend services enabling cryptographic digital key exchange and real-time remote vehicle operations across Renault's connected vehicle fleet.</p>
+        </div>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <i class="bx bx-building"></i>
+                <span>Renault Digital Maroc</span>
+            </div>
+            <div class="meta-item">
+                <i class="bx bx-calendar"></i>
+                <span>Nov 2024 – Present</span>
+            </div>
+            <div class="meta-item">
+                <i class="bx bx-cloud"></i>
+                <span>GCP / Kubernetes / IoT</span>
+            </div>
+        </div>
+
+        <!-- Architectural Problem & Solution -->
+        <div class="row my-5">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 p-4 border-0 shadow-sm" style="background: var(--card-bg, #ffffff); border-radius: 12px;">
+                    <h4 class="text-primary mb-3"><i class="bx bx-error-circle"></i> The Architectural Challenge</h4>
+                    <p>
+                        Modern connected vehicle platforms require sub-second remote operations (lock/unlock, engine authorization, telemetry dispatch) while operating under unreliable cellular connectivity and severe zero-trust security constraints. Synchronous HTTP polling would saturate cloud resources and fail catastrophically in spotty network scenarios, while naive key exchange protocols expose vehicles to relay and replay attacks.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 p-4 border-0 shadow-sm" style="background: var(--card-bg, #ffffff); border-radius: 12px;">
+                    <h4 class="text-success mb-3"><i class="bx bx-check-shield"></i> The Architectural Solution</h4>
+                    <p>
+                        Architected an event-driven microservices backend leveraging Spring Integration and Apache Kafka to decouple high-frequency vehicle telemetry ingestion from stateful command dispatch. Implemented zero-trust PKI cryptographic signature verification and dynamic asymmetric key exchange, ensuring tamper-proof authorization and sustaining sub-200ms roundtrips.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-stack-section">
+            <h3>Technologies & Architectural Toolkit</h3>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="bx bxl-java"></i>
+                    <span>Java 21</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bxl-spring-boot"></i>
+                    <span>Spring Boot</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bx-transfer-alt"></i>
+                    <span>Apache Kafka</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bxl-google-cloud"></i>
+                    <span>Google Cloud (GKE)</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bx-shield-quarter"></i>
+                    <span>Zero-Trust PKI</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bxl-postgresql"></i>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bx-server"></i>
+                    <span>Redis</span>
+                </div>
+                <div class="tech-item">
+                    <i class="bx bxl-docker"></i>
+                    <span>Docker &amp; K8s</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Architectural Highlights -->
+        <div class="my-5">
+            <h3 class="text-center mb-4">Key Architectural Pillars</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-3 border rounded text-center h-100" style="background: var(--light-bg, #f8fafc);">
+                        <i class="bx bx-timer text-primary" style="font-size: 2.5rem;"></i>
+                        <h5 class="mt-2">&lt;200ms Latency</h5>
+                        <p class="text-muted small">Event-driven Kafka streaming eliminates polling overhead, guaranteeing real-time response times for remote vehicle actions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border rounded text-center h-100" style="background: var(--light-bg, #f8fafc);">
+                        <i class="bx bx-lock-alt text-primary" style="font-size: 2.5rem;"></i>
+                        <h5 class="mt-2">Zero-Trust Cryptography</h5>
+                        <p class="text-muted small">End-to-end asymmetric key exchange and cryptographic token rotation prevents relay attacks across distributed IoT endpoints.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border rounded text-center h-100" style="background: var(--light-bg, #f8fafc);">
+                        <i class="bx bx-infinite text-primary" style="font-size: 2.5rem;"></i>
+                        <h5 class="mt-2">Cloud Resiliency</h5>
+                        <p class="text-muted small">Containerized on Google Kubernetes Engine (GKE) with multi-zone redundancy, automated health probes, and log-based tracing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="index.html#portfolio" class="project-link">
+                <i class="bx bx-left-arrow-alt"></i> Back to Portfolio
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="gallery-header">
+            <h2>System Architecture Diagram</h2>
+            <p>High-level architecture illustrating cloud-to-vehicle cryptographic handshakes and event streaming pipelines</p>
+        </div>
+
+        <div class="gallery-grid justify-content-center">
+            <div class="gallery-item w-100 text-center" data-image="assets/img/portfolio/vkm-architecture.svg">
+                <img src="assets/img/portfolio/vkm-architecture.svg" alt="Renault VKM Architecture Diagram" class="img-fluid rounded shadow" style="max-height: 480px;" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
