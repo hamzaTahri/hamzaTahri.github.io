@@ -3,6 +3,8 @@
 
 <head>
     {% include head.html %}
+    {% assign hero_image_path = page.hero_image | default: "assets/img/hero-bg.jpg" %}
+    {% assign hero_is_diagram = hero_image_path | slice: -4, 4 %}
     <style>
         .hero-section {
             position: relative;
@@ -15,10 +17,15 @@
             color: white;
             text-align: center;
             margin-bottom: 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ page.hero_image | default: "assets/img/hero-bg.jpg" | relative_url }}');
+            {% if hero_is_diagram == ".svg" %}
+            /* Architecture diagrams clash when used as a photo-style backdrop; use a flat brand gradient instead */
+            background: linear-gradient(135deg, #0a192f 0%, #112240 50%, #0a192f 100%);
+            {% else %}
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ hero_image_path | relative_url }}');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            {% endif %}
         }
 
         .hero-section::before {
@@ -28,7 +35,11 @@
             left: 0;
             right: 0;
             bottom: 0;
+            {% if hero_is_diagram == ".svg" %}
+            background: transparent;
+            {% else %}
             background: rgba(0, 0, 0, 0.5);
+            {% endif %}
             z-index: 1;
         }
 
