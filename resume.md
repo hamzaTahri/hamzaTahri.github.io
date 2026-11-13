@@ -5,7 +5,7 @@ Casablanca, Morocco · [LinkedIn](https://www.linkedin.com/in/hamza-tahri) · [G
 ---
 
 ### Executive Profile
-Impact-driven Senior Backend Engineer advancing into Software Architecture with 4+ years of expertise in high-throughput distributed systems, connected-vehicle IoT cloud backends, core banking infrastructure, and enterprise AI engineering. Dual-certified cloud architect (**Google Cloud Professional Cloud Architect** & **AWS Certified Solutions Architect – Professional**). Currently serving as Senior Backend Engineer and **AI Champion at Renault Digital**, architecting cloud services for Renault's connected-vehicle platform (Virtual Key Manager - VKM) and pioneering enterprise AI-assisted engineering workflows (Model Context Protocol, Spec-Driven Development, Context Optimization Engines).
+Impact-driven Senior Backend Engineer advancing into Software Architecture with 4+ years of expertise in high-throughput distributed systems, connected-vehicle IoT cloud backends, core banking infrastructure, and enterprise AI engineering. Dual-certified cloud architect (**Google Cloud Professional Cloud Architect** & **AWS Certified Solutions Architect – Associate**). Currently serving as Senior Backend Engineer and **AI Champion at Renault Digital**, architecting cloud services for Renault's connected-vehicle platform (Virtual Key Manager - VKM) and pioneering enterprise AI-assisted engineering workflows (Model Context Protocol, Spec-Driven Development, Context Optimization Engines).
 
 ---
 
@@ -28,7 +28,7 @@ Impact-driven Senior Backend Engineer advancing into Software Architecture with 
 - **On-Device vs. Cloud LLM Benchmarking:** Engineered an automotive recommendation engine prototype benchmarking on-device CoreML models against cloud-hosted LLMs (Gemma), establishing an architectural decision matrix across latency (<50ms edge vs. ~400ms cloud), device power consumption, and response accuracy.
 
 #### Oracle Labs — Software Engineer
-*Apr 2024 – Nov 2024 | Casablanca, Morocco*
+*Apr 2024 – Sep 2024 | Casablanca, Morocco*
 - **High-Performance Graph Analytics (PGX):** Developed high-throughput REST and binary APIs for Parallel Graph Analytics (PGX), optimizing distributed graph traversal algorithms and reducing memory consumption by 25% on multi-million node graphs.
 - **Enterprise Build Modernization:** Spearheaded the enterprise-wide build infrastructure migration from Gradle 5 to Gradle 8 across core analytics libraries, cutting CI pipeline build times by 40% and eliminating deprecated internal dependency locks.
 - **Performance Benchmarking & Query Optimization:** Profiled query execution plans and connection pooling using PGQL/SQL, sustaining 99.9% uptime SLA across high-concurrency cloud analytics workloads.
@@ -57,9 +57,10 @@ Impact-driven Senior Backend Engineer advancing into Software Architecture with 
 ---
 
 ### Certifications
-- **Google Cloud Certified:** Professional Cloud Architect (GCP PCA) — 2024
-- **AWS Certified:** Solutions Architect – Professional (AWS SAP) — 2024
-- **Oracle Certified Professional:** Java SE 11 Developer (OCP 11) — 2023
+- **Google Cloud Certified:** Professional Cloud Architect (GCP PCA) — 2026
+- **AWS Certified:** Solutions Architect – Associate (AWS SAA) — 2023
+- **Oracle Certified Professional:** Java SE 11 (OCP 11) — 2024
+- **Cisco:** CCNA — 2021
 
 ---
 
