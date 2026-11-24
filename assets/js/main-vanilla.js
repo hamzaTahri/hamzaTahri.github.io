@@ -431,6 +431,48 @@
     }
   };
 
+  const initCardSpotlights = () => {
+    const cards = select(
+      '.info-card, .executive-summary-card, .resume-timeline .resume-item, ' +
+      '.education-section .resume-card, .skills-card, .count-box, .service-box',
+      true
+    );
+
+    cards.forEach((card) => {
+      card.classList.add('ambient-card');
+      card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        card.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`);
+        card.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`);
+      }, { passive: true });
+    });
+  };
+
+  const initSectionAgents = () => {
+    select('main > section', true).forEach((section, index) => {
+      if (section.querySelector('.section-agents')) return;
+
+      const layer = document.createElement('div');
+      layer.className = 'section-agents';
+      layer.setAttribute('aria-hidden', 'true');
+      layer.innerHTML =
+        '<span class="agent-flow"></span>' +
+        '<span class="agent-flow"></span>' +
+        '<span class="agent-flow"></span>' +
+        '<div class="agent-illustration">' +
+        '<dotlottie-wc src="/assets/img/illustrations/ai-agent-working.lottie" ' +
+        'autoplay loop background="transparent"></dotlottie-wc>' +
+        '<span class="agent-caption"><i class="bx bx-code-alt"></i> Agent working</span>' +
+        '</div>' +
+        '<span class="agent-pulse"></span>' +
+        '<span class="agent-pulse"></span>' +
+        '<span class="agent-pulse"></span>';
+
+      layer.style.setProperty('--agent-delay', `${index * -1.7}s`);
+      section.prepend(layer);
+    });
+  };
+
   /**
    * Initialize scroll indicators for scrollable sections
    */
@@ -553,6 +595,8 @@
     initTestimonialsCarousel();
     initPortfolioCarousel();
     initScrollIndicators();
+    initSectionAgents();
+    initCardSpotlights();
   });
 
   /**
